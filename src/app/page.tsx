@@ -60,9 +60,7 @@ export default function Home() {
             className="flex items-center gap-6 flex-wrap justify-center w-full h-[90vh] z-10"
           >
             <h1>
-              It's me,
-              <br />
-              aapelix
+              It's me, <br /> aapelix
             </h1>
             {imageSrc && (
               <div className="w-96 h-96">
