@@ -1,8 +1,8 @@
-import path from 'path';
-import fs from 'fs';
+import path from "path";
+import fs from "fs";
 
 export async function GET(req: any) {
-  const imageFolder = path.join(process.cwd(), 'public', 'images');
+  const imageFolder = path.join(process.cwd(), "public", "images");
   const files = fs.readdirSync(imageFolder);
 
   const today = new Date().toISOString().slice(0, 10);
@@ -14,7 +14,7 @@ export async function GET(req: any) {
 
   return new Response(imageBuffer, {
     headers: {
-      'Content-Type': 'image/jpeg',
+      "Content-Type": "image/jpeg",
     },
   });
 }
