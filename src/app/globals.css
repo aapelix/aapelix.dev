@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono:700|IBM%20Plex%20Mono:400");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +28,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/IBMPlexMono-Regular.ttf");
+  }
 }
 
 @layer utilities {
