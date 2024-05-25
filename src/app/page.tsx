@@ -1,11 +1,14 @@
 "use client";
 
+import { Github, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
   const [imgFocus, setImgFocus] = useState(false);
   const [input, setInput] = useState("");
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
 
   const projects = [
     {
@@ -35,6 +38,13 @@ export default function Home() {
     };
 
     fetchImage();
+
+    fetch("https://programming-quotesapi.vercel.app/api/random")
+      .then((response) => response.json())
+      .then((quote) => {
+        setAuthor(quote.author);
+        setQuote(quote.quote);
+      });
   }, []);
 
   return (
@@ -53,7 +63,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <main className="w-screen flex justify-center min-h-screen bg-background text-text font-heading text-5xl font-bold">
+      <main className="w-screen flex justify-center min-h-screen bg-background text-text font-heading md:text-5xl antialiased tracking-tight text-4xl font-bold">
         <div className="flex flex-col w-2/3 justify-start items-center">
           <section
             id="hero"
@@ -89,13 +99,13 @@ export default function Home() {
             </p>
           </section>
           <section
-            id="links"
+            id="socials"
             className="flex w-full flex-col items-center mt-24"
           >
-            <h1>My socials</h1>
-            <div>
+            <h1>Socials</h1>
+            <div className="flex flex-wrap">
               <button
-                className="text-xl bg-secondary p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                 onClick={() => {
                   location.assign("https://github.com/aapelix/");
                 }}
@@ -103,7 +113,7 @@ export default function Home() {
                 GitHub
               </button>
               <button
-                className="text-xl bg-secondary p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                 onClick={() => {
                   location.assign("https://youtube.com/@aapelix");
                 }}
@@ -111,12 +121,37 @@ export default function Home() {
                 Youtube
               </button>
               <button
-                className="text-xl bg-secondary p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                 onClick={() => {
-                  location.assign("https://twitch.tv/aapelix_");
+                  location.assign("https://x.com/@aapelix1");
                 }}
               >
-                Twitch
+                Twitter
+              </button>
+
+              <button
+                className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                onClick={() => {
+                  location.assign("https://github.com/aapelix/");
+                }}
+              >
+                <Github />
+              </button>
+              <button
+                className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                onClick={() => {
+                  location.assign("https://youtube.com/@aapelix");
+                }}
+              >
+                <Youtube />
+              </button>
+              <button
+                className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                onClick={() => {
+                  location.assign("https://x.com/@aapelix1");
+                }}
+              >
+                <Twitter />
               </button>
             </div>
           </section>
@@ -165,6 +200,17 @@ export default function Home() {
                 ))}
               </>
             )}
+          </section>
+          <section
+            id="quote"
+            className="text-center mt-24 md:w-3/4 w-[90vw] mb-24"
+          >
+            <p className="text-base font-normal">
+              Programming quote of the day
+            </p>
+            <h1 className="text-2xl">{quote}</h1>
+            <p className="text-xl text-zinc-600 font-normal">from</p>
+            <p className="text-3xl">{author}</p>
           </section>
         </div>
       </main>
