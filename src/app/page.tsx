@@ -63,7 +63,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <main className="w-screen flex justify-center min-h-screen bg-background text-text font-heading md:text-5xl antialiased tracking-tight text-4xl font-bold">
+      <main className="w-screen flex justify-center min-h-screen bg-background text-text font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
         <div className="flex flex-col w-2/3 justify-start items-center">
           <section
             id="hero"
