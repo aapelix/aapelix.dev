@@ -59,7 +59,7 @@ export default function Home() {
             id="hero"
             className="flex items-center gap-6 flex-wrap justify-center w-full h-[90vh] z-10"
           >
-            <h1>
+            <h1 className="md:mr-10 mr-0">
               Its me, <br /> aapelix
             </h1>
             {imageSrc && (
