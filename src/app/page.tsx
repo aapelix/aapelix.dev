@@ -76,7 +76,7 @@ export default function Home() {
               </div>
             )}
           </section>
-          <section id="about">
+          <section id="about" className="md:mt-0 mt-10">
             <h1>Who am I?</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia id
@@ -136,7 +136,7 @@ export default function Home() {
               <>
                 {filteredProjects.map((project) => (
                   <div
-                    className="flex justify-between w-full my-3"
+                    className="flex justify-between w-full my-3 flex-wrap"
                     key={project.name}
                   >
                     <div>
