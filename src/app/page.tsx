@@ -49,9 +49,11 @@ export default function Home() {
 
   return (
     <>
+      <div className="w-screen h-screen absolute top-[100vh] bg-[#1a1a1a]" />
+
       {imageSrc && imgFocus && (
         <div
-          className="w-screen fixed h-screen bg-background flex justify-center items-center z-50"
+          className="w-screen fixed h-screen flex justify-center items-center z-50"
           onClick={() => setImgFocus(false)}
         >
           <div className="aspect-video md:w-auto md:h-[90vh] h-auto w-[80vw]">
@@ -63,7 +65,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <main className="w-screen flex justify-center min-h-screen bg-background text-text font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
+      <main className="w-screen flex justify-center min-h-screen bg-[url('/bg.png')] bg-[#1a1a1a] bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
         <div className="flex flex-col w-2/3 justify-start items-center">
           <section
             id="hero"
@@ -86,7 +88,11 @@ export default function Home() {
               </div>
             )}
           </section>
-          <section id="about" className="md:mt-0 mt-10">
+          <img
+            src="/wave-haikei.png"
+            className="w-screen absolute h-min object-fill bottom-0 pixelated"
+          />
+          <section id="about" className="md:mt-0 translate-y-44">
             <h1>Who am I?</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia id
@@ -100,7 +106,7 @@ export default function Home() {
           </section>
           <section
             id="socials"
-            className="flex w-full flex-col items-center mt-24"
+            className="flex w-full flex-col items-center mt-24 translate-y-44"
           >
             <h1>Socials</h1>
             <div className="flex flex-wrap">
@@ -157,7 +163,7 @@ export default function Home() {
           </section>
           <section
             id="projects"
-            className="text-xl w-full mt-10 p-3 rounded-xl"
+            className="text-xl w-full mt-10 p-3 rounded-xl translate-y-44"
           >
             <input
               type="text"
@@ -200,17 +206,6 @@ export default function Home() {
                 ))}
               </>
             )}
-          </section>
-          <section
-            id="quote"
-            className="text-center mt-24 md:w-3/4 w-[90vw] mb-24"
-          >
-            <p className="text-base font-normal">
-              Programming quote of the day
-            </p>
-            <h1 className="text-2xl">{quote}</h1>
-            <p className="text-xl text-zinc-600 font-normal">from</p>
-            <p className="text-3xl">{author}</p>
           </section>
         </div>
       </main>
