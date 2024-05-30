@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-screen h-screen absolute top-[120vh] bg-[#1a1a1a]" />
+      <div className="w-screen md:h-screen h-[120vh] absolute top-[100vh] bg-[#1a1a1a]" />
 
       {imageSrc && imgFocus && (
         <div
