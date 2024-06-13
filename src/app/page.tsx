@@ -2,13 +2,13 @@
 
 import { Github, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+import { CardBody, CardContainer, CardItem } from "./components/ui/3d-card";
+import Link from "next/link";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
-  const [imgFocus, setImgFocus] = useState(false);
   const [input, setInput] = useState("");
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
 
   const projects = [
     {
@@ -38,54 +38,46 @@ export default function Home() {
     };
 
     fetchImage();
-
-    fetch("https://programming-quotesapi.vercel.app/api/random")
-      .then((response) => response.json())
-      .then((quote) => {
-        setAuthor(quote.author);
-        setQuote(quote.quote);
-      });
   }, []);
 
   return (
     <>
       <div className="w-screen md:h-screen h-[120vh] absolute top-[100vh] bg-[#1a1a1a]" />
-
-      {imageSrc && imgFocus && (
-        <div
-          className="w-screen fixed h-screen flex justify-center items-center z-50"
-          onClick={() => setImgFocus(false)}
-        >
-          <div className="aspect-video md:w-auto md:h-[90vh] h-auto w-[80vw]">
-            <img
-              className="object-cover w-full h-full rounded-3xl hover:scale-[1.02] duration-300 cursor-pointer"
-              src={imageSrc}
-              alt="Daily image"
-            />
-          </div>
-        </div>
-      )}
-      <main className="w-screen flex justify-center min-h-screen bg-[url('/bg.png')] bg-[#1a1a1a] bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
+      <main className="w-screen flex justify-center min-h-screen bg-[#1a1a1a] bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
+        <BackgroundGradientAnimation />
         <div className="flex flex-col w-2/3 justify-start items-center">
           <section
             id="hero"
             className="flex items-center gap-6 flex-wrap justify-center w-full h-[90vh] z-10"
           >
-            <h1 className="md:mr-10 mr-0">
+            <h1 className="md:mr-10 mr-0 text-6xl translate-y-24 lg:translate-y-0 font-bold">
               Its me, <br /> aapelix
             </h1>
             {imageSrc && (
-              <div className="w-96 h-96">
-                <img
-                  className="object-cover w-full h-full rounded-3xl hover:scale-[1.02] duration-300 cursor-pointer"
-                  src={imageSrc}
-                  alt="Daily image"
-                  onClick={() => setImgFocus(true)}
-                />
-                <p className="text-xs text-center text-zinc-600 font-normal">
-                  random img from me
-                </p>
-              </div>
+              <CardContainer className="inter-var">
+                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                  <CardItem
+                    translateZ="50"
+                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                  >
+                    Random image from me
+                  </CardItem>
+                  <CardItem translateZ="100" className="w-full mt-4">
+                    <img className="rounded-3xl" src={imageSrc} alt="" />
+                  </CardItem>
+                  <div className="flex justify-between items-center mt-20">
+                    <a href={imageSrc} target="_blank">
+                      <CardItem
+                        translateZ={20}
+                        as="button"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                      >
+                        View raw img
+                      </CardItem>
+                    </a>
+                  </div>
+                </CardBody>
+              </CardContainer>
             )}
           </section>
           <img
@@ -186,7 +178,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-end items-center flex-wrap">
                       <button
-                        className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-xl text-zinc-500 hover:text-text hover:border-text duration-300"
+                        className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-full px-4 hover:px-14 text-zinc-500 hover:text-background hover:border-background duration-300"
                         onClick={() => {
                           location.assign(project.site);
                         }}
@@ -194,7 +186,7 @@ export default function Home() {
                         site
                       </button>
                       <button
-                        className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-xl text-zinc-500 hover:text-text hover:border-text duration-300"
+                        className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-full px-4 hover:px-14 text-zinc-500 hover:text-background hover:border-background duration-300"
                         onClick={() => {
                           location.assign(project.gh);
                         }}
