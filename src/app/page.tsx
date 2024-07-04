@@ -60,8 +60,10 @@ export default function Home() {
                 className="flex flex-col items-center gap-6 flex-wrap justify-center h-[90vh] z-10"
               >
                 <h1 className="md:mr-10 mr-0 md:text-9xl text-8xl text-center translate-y-24 lg:translate-y-0 font-black">
-                  <p className="text-6xl">Its me,</p> <br />{" "}
-                  <p className="-translate-y-32">aapelix</p>
+                  <p className="text-6xl md:-translate-y-0 -translate-y-6">
+                    Its me,
+                  </p>{" "}
+                  <br /> <p className="-translate-y-32">aapelix</p>
                 </h1>
                 <div className="text-lg gap-2 flex justify-center lg:-translate-y-24 flex-wrap">
                   <a
