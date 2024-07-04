@@ -2,11 +2,7 @@
 
 import { Github, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
-import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
-import { CardBody, CardContainer, CardItem } from "./components/ui/3d-card";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
@@ -49,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      <BackgroundGradientAnimation />
+      <div className="bg-[url('/grainy1.jpg')] w-screen h-screen absolute bg-cover" />
 
       <div
         style={{
@@ -57,50 +53,31 @@ export default function Home() {
         }}
       >
         <motion.div initial={{ y: -100 }} animate={{ y: 0 }}>
-          <div className="w-screen md:h-screen h-[120vh] absolute top-[100vh] bg-[#1a1a1a]" />
-          <main className="w-screen flex justify-center min-h-screen bg-[#1a1a1a] bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
+          <main className="w-screen flex justify-center min-h-screen bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
             <div className="flex flex-col w-2/3 justify-start items-center">
               <section
                 id="hero"
-                className="flex items-center gap-6 flex-wrap justify-center w-full h-[90vh] z-10"
+                className="flex flex-col items-center gap-6 flex-wrap justify-center h-[90vh] z-10"
               >
-                <h1 className="md:mr-10 mr-0 text-6xl translate-y-24 lg:translate-y-0 font-bold">
-                  Its me, <br /> aapelix
+                <h1 className="md:mr-10 mr-0 text-9xl text-center translate-y-24 lg:translate-y-0 font-black">
+                  <p className="text-6xl">Its me,</p> <br />{" "}
+                  <p className="-translate-y-32">aapelix</p>
                 </h1>
-                {imageSrc && (
-                  <CardContainer className="inter-var">
-                    <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-                      <CardItem
-                        translateZ="50"
-                        className="text-xl font-bold text-neutral-600 dark:text-white"
-                      >
-                        Random image from me
-                      </CardItem>
-                      <CardItem translateZ="100" className="w-full mt-4">
-                        <img className="rounded-3xl" src={imageSrc} alt="" />
-                      </CardItem>
-                      <div className="flex justify-between items-center mt-20">
-                        <a href={imageSrc} target="_blank">
-                          <CardItem
-                            translateZ={20}
-                            as="button"
-                            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                          >
-                            View raw img
-                          </CardItem>
-                        </a>
-                      </div>
-                    </CardBody>
-                  </CardContainer>
-                )}
+                <div className="text-lg gap-2 flex justify-center lg:-translate-y-24">
+                  <a
+                    href="mailto:aapelix@duck.com"
+                    className="bg-[url('/button1.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300"
+                  >
+                    Contact me
+                  </a>
+                  <a className="bg-[url('/button2.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
+                    Who am i?
+                  </a>
+                  <a className="bg-[url('/button3.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
+                    My projects
+                  </a>
+                </div>
               </section>
-              <Image
-                src="/wave-haikei.png"
-                alt="Cool waves"
-                width={3000}
-                height={0}
-                className="w-screen absolute h-min object-fill bottom-0 pixelated z-0"
-              />
               <section id="about" className="md:mt-0 translate-y-44 z-50">
                 <h1>Who am I?</h1>
                 <p className="text-lg font-light">
