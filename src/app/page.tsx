@@ -68,13 +68,13 @@ export default function Home() {
                     href="mailto:aapelix@duck.com"
                     className="bg-[url('/button1.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300"
                   >
-                    Contact me
+                    Contact me!
                   </a>
                   <a className="bg-[url('/button2.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
                     Who am i?
                   </a>
                   <a className="bg-[url('/button3.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
-                    My projects
+                    My projects.
                   </a>
                 </div>
               </section>
