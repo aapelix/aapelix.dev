@@ -3,11 +3,17 @@
 import { useEffect, useState, useRef } from "react";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
   const [grow, setGrow] = useState(false);
-  const cursorRef = useRef(null);
-  const requestRef = useRef(null);
-  const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement | null>(null);
+  const requestRef = useRef<number | null>(null);
+  const [targetPosition, setTargetPosition] = useState<{
+    x: number;
+    y: number;
+  }>({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -18,20 +24,29 @@ const CustomCursor = () => {
     const addEventListeners = () => {
       document.addEventListener("mousemove", onMouseMove);
       document
-        .querySelectorAll("a, button, img, input, textarea, h1")
+        .querySelectorAll<HTMLElement>("a, button, img, input, textarea, h1")
         .forEach((el) => {
-          el.addEventListener("mouseenter", () => setGrow(true));
-          el.addEventListener("mouseleave", () => setGrow(false));
+          el.addEventListener("mouseenter", handleMouseEnter);
+          el.addEventListener("mouseleave", handleMouseLeave);
         });
     };
 
     const removeEventListeners = () => {
       document.removeEventListener("mousemove", onMouseMove);
+      document
+        .querySelectorAll<HTMLElement>("a, button, img, input, textarea, h1")
+        .forEach((el) => {
+          el.removeEventListener("mouseenter", handleMouseEnter);
+          el.removeEventListener("mouseleave", handleMouseLeave);
+        });
     };
 
-    const onMouseMove = (e: any) => {
+    const onMouseMove = (e: MouseEvent) => {
       setTargetPosition({ x: e.clientX, y: e.clientY });
     };
+
+    const handleMouseEnter = () => setGrow(true);
+    const handleMouseLeave = () => setGrow(false);
 
     const updatePosition = () => {
       if (!isMobile) {
@@ -41,7 +56,7 @@ const CustomCursor = () => {
         }));
         if (cursorRef.current) {
           const bgColor = window.getComputedStyle(
-            document.elementFromPoint(position.x, position.y)
+            document.elementFromPoint(position.x, position.y) as Element
           ).backgroundColor;
           const cursorColor =
             bgColor === "rgba(0, 0, 0, 0)"
@@ -62,7 +77,9 @@ const CustomCursor = () => {
 
     return () => {
       removeEventListeners();
-      cancelAnimationFrame(requestRef.current);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
       window.removeEventListener("resize", checkIfMobile);
     };
   }, [position.x, position.y, targetPosition.x, targetPosition.y, isMobile]);
