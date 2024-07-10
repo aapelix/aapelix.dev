@@ -3,11 +3,64 @@
 import { Github, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState("");
   const [input, setInput] = useState("");
   const [hidden, setHidden] = useState(true);
+
+  const items = [
+    {
+      title: "Aapelix's Weather App",
+      description: "My very own weather app/website powered by WeatherApi",
+      header: <img src="/Gradient2.png" />,
+      className: "md:col-span-2",
+      url: "https://weather.aapelix.dev",
+    },
+    {
+      title: "Aapelix's News app",
+      description: "WIP News app",
+      header: <img src="/Gradient.png" />,
+      className: "md:col-span-1",
+      url: "https://news.aapelix.dev",
+    },
+    {
+      title: "Project KTJNKEIO",
+      description:
+        "A WIP game. The letters KTJNKEIO mean 'Keksikää Tälle joku nimi koska en ite osaa' that translates to 'Come Up With a Mame For This Because I Can't Myself'",
+      header: (
+        <>
+          <img className="md:block hidden" src="/Gradient3.png" alt="" />
+          <img className="md:hidden block" src="/Gradient.png" />
+        </>
+      ),
+      className: "md:row-span-2",
+      url: "https://github.com/aapelix/project-ktjnkeio",
+    },
+    {
+      title: "Jamix menu v2",
+      description: "My own version of JAMIX food app (WIP)",
+      header: <img src="/Gradient2.png" />,
+      className: "md:col-span-2",
+      url: "https://jamix.aapelix.dev",
+    },
+    {
+      title: "Ilma",
+      description: "A better version (🧢) of Wilma",
+      header: <img src="/Gradient.png" />,
+      className: "md:row-span-1",
+      url: "https://github.com/aapelix/project-ilma",
+    },
+    {
+      title: "RealmiUtils",
+      description:
+        "Mineraft utility mod for a finnish minecraft server called Realmi",
+      header: <img src="/Gradient.png" />,
+      className: "md:row-span-1",
+      url: "https://github.com/aapelix/realmiutils",
+    },
+  ];
 
   const projects = [
     {
@@ -45,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-[url('/grainy1.jpg')] w-screen h-screen absolute bg-cover" />
+      <div className="bg-[url('/Gradient.png')] w-screen h-screen fixed bg-cover" />
 
       <div
         style={{
@@ -68,39 +121,63 @@ export default function Home() {
                 <div className="text-lg gap-2 flex justify-center lg:-translate-y-24 flex-wrap">
                   <a
                     href="mailto:aapelix@duck.com"
-                    className="bg-[url('/button1.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300"
+                    className="bg-[url('/button1.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
                   >
                     Contact me!
                   </a>
-                  <a className="bg-[url('/button2.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
+                  <a
+                    href="/#about"
+                    className="bg-[url('/button2.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
+                  >
                     Who am i?
                   </a>
-                  <a className="bg-[url('/button3.jpg')] rounded-full flex justify-center items-center cursor-pointer h-12 font-normal w-44 hover:w-56 duration-300">
+                  <a
+                    href="/#projects"
+                    className="bg-[url('/button3.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
+                  >
                     My projects.
                   </a>
                 </div>
               </section>
-              <section id="about" className="md:mt-0 translate-y-44 z-50">
+              <section id="projects" className="z-50 text-base -translate-y-44">
+                <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+                  {items.map((item, i) => (
+                    <BentoGridItem
+                      key={i}
+                      title={item.title}
+                      description={item.description}
+                      header={item.header}
+                      className={item.className}
+                      url={item.url}
+                    />
+                  ))}
+                </BentoGrid>
+                <p className="text-center cursor-none mt-2">
+                  More on my GitHub page
+                </p>
+              </section>
+              <section
+                id="about"
+                className="md:mt-12 mt-5 z-50 -translate-y-44"
+              >
                 <h1>Who am I?</h1>
                 <p className="text-lg font-light">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                  id cum laudantium perspiciatis veniam amet error enim est
-                  earum, consectetur veritatis animi incidunt quisquam sit unde
-                  tenetur totam doloribus dolor. Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Quia id cum laudantium
+                  Haha too lazy to write anything for now. Lorem ipsum dolor sit
+                  amet, consectetur adipisicing elit. Quia id cum laudantium
                   perspiciatis veniam amet error enim est earum, consectetur
                   veritatis animi incidunt quisquam sit unde tenetur totam
-                  doloribus dolor.
+                  doloribus dolor. Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit.
                 </p>
               </section>
               <section
                 id="socials"
-                className="flex w-full flex-col items-center mt-24 translate-y-44"
+                className="flex w-full flex-col items-center z-50 -translate-y-24"
               >
                 <h1>Socials</h1>
                 <div className="flex flex-wrap">
                   <button
-                    className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 w-28 hover:w-44 duration-300"
+                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-28 hover:w-44 duration-300"
                     onClick={() => {
                       location.assign("https://github.com/aapelix/");
                     }}
@@ -108,7 +185,7 @@ export default function Home() {
                     GitHub
                   </button>
                   <button
-                    className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
+                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
                     onClick={() => {
                       location.assign("https://youtube.com/@aapelix");
                     }}
@@ -116,7 +193,7 @@ export default function Home() {
                     Youtube
                   </button>
                   <button
-                    className="text-xl bg-secondary md:block hidden p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
+                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
                     onClick={() => {
                       location.assign("https://x.com/@aapelix1");
                     }}
@@ -125,7 +202,7 @@ export default function Home() {
                   </button>
 
                   <button
-                    className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                    className="text-xl bg-secondary md:hidden block cursor-none p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                     onClick={() => {
                       location.assign("https://github.com/aapelix/");
                     }}
@@ -133,7 +210,7 @@ export default function Home() {
                     <Github />
                   </button>
                   <button
-                    className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                    className="text-xl bg-secondary md:hidden block cursor-none p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                     onClick={() => {
                       location.assign("https://youtube.com/@aapelix");
                     }}
@@ -141,7 +218,7 @@ export default function Home() {
                     <Youtube />
                   </button>
                   <button
-                    className="text-xl bg-secondary md:hidden block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
+                    className="text-xl bg-secondary md:hidden cursor-none block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
                     onClick={() => {
                       location.assign("https://x.com/@aapelix1");
                     }}
@@ -149,54 +226,6 @@ export default function Home() {
                     <Twitter />
                   </button>
                 </div>
-              </section>
-              <section
-                id="projects"
-                className="text-xl w-full mt-10 p-3 rounded-xl translate-y-44"
-              >
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  className="bg-transparent outline-none"
-                />
-
-                {filteredProjects && (
-                  <>
-                    {filteredProjects.map((project) => (
-                      <div
-                        className="flex justify-between w-full my-3 flex-wrap"
-                        key={project.name}
-                      >
-                        <div>
-                          <h1>{project.name}</h1>
-                          <p className="text-base text-accent">
-                            {project.desc}
-                          </p>
-                        </div>
-                        <div className="flex justify-end items-center flex-wrap">
-                          <button
-                            className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-full px-4 hover:px-14 text-zinc-500 hover:text-background hover:border-background duration-300"
-                            onClick={() => {
-                              location.assign(project.site);
-                            }}
-                          >
-                            site
-                          </button>
-                          <button
-                            className="mx-1 md:my-0 my-1 border-zinc-500 border p-1 rounded-full px-4 hover:px-14 text-zinc-500 hover:text-background hover:border-background duration-300"
-                            onClick={() => {
-                              location.assign(project.gh);
-                            }}
-                          >
-                            github
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </>
-                )}
               </section>
             </div>
           </main>

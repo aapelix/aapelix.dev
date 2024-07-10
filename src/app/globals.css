@@ -20,10 +20,6 @@
   }
 }
 
-body {
-  background-image: url("/grainy2.jpg");
-}
-
 .pixel {
   image-rendering: pixelated;
 }
@@ -38,5 +34,44 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+* {
+  cursor: none;
+}
+
+::selection {
+  background: #ffb7b7; /* Background color for the selection */
+  color: #000; /* Text color for the selection */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background: #ffb7b7; /* Background color for the selection */
+  color: #000; /* Text color for the selection */
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out,
+    background-color 0.2s ease-out;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.grow {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
   }
 }
