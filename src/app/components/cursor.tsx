@@ -29,7 +29,7 @@ const CustomCursor = () => {
       document.removeEventListener("mousemove", onMouseMove);
     };
 
-    const onMouseMove = (e) => {
+    const onMouseMove = (e: any) => {
       setTargetPosition({ x: e.clientX, y: e.clientY });
     };
 
