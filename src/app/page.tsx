@@ -110,7 +110,7 @@ export default function Home() {
                     />
                   ))}
                 </BentoGrid>
-                <p className="text-center cursor-none mt-2 font-light">
+                <p className="text-center cursor-none mt-2 font-normal">
                   More on my GitHub page
                 </p>
               </section>
