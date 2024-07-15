@@ -78,7 +78,7 @@ export default function Home() {
   ];
 
   const filteredProjects = projects.filter((e) =>
-    e.name.toLowerCase().startsWith(input.toLowerCase())
+    e.name.toLowerCase().startsWith(input.toLowerCase()),
   );
 
   useEffect(() => {
@@ -98,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-[url('/Gradient.png')] w-screen h-screen fixed bg-cover" />
+      <div className="bg-[url('/Gradientt.png')] w-screen h-screen fixed bg-cover" />
 
       <div
         style={{
@@ -152,7 +152,7 @@ export default function Home() {
                     />
                   ))}
                 </BentoGrid>
-                <p className="text-center cursor-none mt-2">
+                <p className="text-center cursor-none mt-2 font-light">
                   More on my GitHub page
                 </p>
               </section>
