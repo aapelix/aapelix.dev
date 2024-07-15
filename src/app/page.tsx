@@ -6,10 +6,6 @@ import { motion } from "framer-motion";
 import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 
 export default function Home() {
-  const [imageSrc, setImageSrc] = useState("");
-  const [input, setInput] = useState("");
-  const [hidden, setHidden] = useState(true);
-
   const items = [
     {
       title: "Aapelix's Weather App",
@@ -58,53 +54,15 @@ export default function Home() {
         "Mineraft utility mod for a finnish minecraft server called Realmi",
       header: <img src="/Gradient.png" />,
       className: "md:row-span-1",
-      url: "https://github.com/aapelix/realmiutils",
+      url: "https://modrinth.com/mod/realmiutils",
     },
   ];
-
-  const projects = [
-    {
-      name: "weather.aapelix.dev",
-      desc: "My weather app powered by OpenWeatherMap",
-      site: "https://weather.aapelix.dev",
-      gh: "https://github.com/aapelix/weather.aapelix.dev",
-    },
-    {
-      name: "Project Ilma",
-      desc: "(WIP) My version of wilma.fi",
-      site: "https://ilma.aapelix.dev",
-      gh: "https://github.com/aapelix/project-ilma",
-    },
-  ];
-
-  const filteredProjects = projects.filter((e) =>
-    e.name.toLowerCase().startsWith(input.toLowerCase()),
-  );
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      const response = await fetch("/api/daily-image");
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setImageSrc(url);
-    };
-
-    fetchImage();
-
-    setTimeout(() => {
-      setHidden(false);
-    }, 1000);
-  }, []);
 
   return (
     <>
       <div className="bg-[url('/Gradientt.png')] w-screen h-screen fixed bg-cover" />
 
-      <div
-        style={{
-          display: hidden ? "none" : "block",
-        }}
-      >
+      <div>
         <motion.div initial={{ y: -100 }} animate={{ y: 0 }}>
           <main className="w-screen flex justify-center min-h-screen bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
             <div className="flex flex-col w-2/3 justify-start items-center">
@@ -172,9 +130,8 @@ export default function Home() {
               </section>
               <section
                 id="socials"
-                className="flex w-full flex-col items-center z-50 -translate-y-24"
+                className="flex w-full flex-col items-center z-50 -translate-y-32"
               >
-                <h1>Socials</h1>
                 <div className="flex flex-wrap">
                   <button
                     className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-28 hover:w-44 duration-300"
