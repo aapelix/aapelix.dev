@@ -86,16 +86,16 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             transition={{ delay: 1.4 }}
           >
-            It's me,{" "}
-            <span className="text-zinc-300 font-semibold">Aapelix</span>.
+            It's me,
+            <span className="text-zinc-300 font-semibold"> Aapelix</span>.
           </motion.p>
           <motion.p
             animate={{ y: 0, opacity: 100 }}
             initial={{ y: 20, opacity: 0 }}
             transition={{ delay: 1.6 }}
           >
-            I'm a{" "}
-            <span className="text-zinc-300 font-semibold">programmer</span>{" "}
+            I'm a
+            <span className="text-zinc-300 font-semibold"> programmer</span>{" "}
             working on
           </motion.p>
           <motion.p
@@ -143,13 +143,14 @@ export default function Home() {
           Section working progress
         </p>
         <div className="grid grid-cols-3 gap-3 mx-10">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
               className={
                 "bg-[#1a1a1a] text-zinc-300 h-[30rem] p-4 flex flex-col rounded-3xl items-start relative hover:scale-[1.03] hover:shadow-xl duration-300" +
                 " " +
                 item.className
               }
+              key={index}
             >
               {item.header}
               <h1 className="mt-3 text-lg font-bold">{item.title}</h1>
