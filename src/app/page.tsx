@@ -86,7 +86,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             transition={{ delay: 1.4 }}
           >
-            It's me,
+            It{"'"}s me,
             <span className="text-zinc-300 font-semibold"> Aapelix</span>.
           </motion.p>
           <motion.p
@@ -94,7 +94,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             transition={{ delay: 1.6 }}
           >
-            I'm a
+            I{"'"}m a
             <span className="text-zinc-300 font-semibold"> programmer</span>{" "}
             working on
           </motion.p>
