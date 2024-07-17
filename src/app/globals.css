@@ -5,23 +5,9 @@
 @import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono:700|IBM%20Plex%20Mono:400");
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
     scroll-behavior: smooth;
     overflow-x: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
-    }
-}
-
-.pixel {
-    image-rendering: pixelated;
+    background-color: #0f0f0f;
 }
 
 @layer base {
@@ -37,10 +23,6 @@
     }
 }
 
-* {
-    cursor: none;
-}
-
 ::selection {
     background: #ffb7b7; /* Background color for the selection */
     color: #000; /* Text color for the selection */
@@ -50,31 +32,4 @@
 ::-moz-selection {
     background: #ffb7b7; /* Background color for the selection */
     color: #000; /* Text color for the selection */
-}
-
-.cursor {
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transition:
-        transform 0.2s ease-out,
-        width 0.2s ease-out,
-        height 0.2s ease-out,
-        background-color 0.2s ease-out;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-}
-
-.cursor.grow {
-    width: 40px;
-    height: 40px;
-}
-
-@media (max-width: 768px) {
-    .cursor {
-        display: none;
-    }
 }

@@ -1,192 +1,171 @@
 "use client";
 
-import { Github, Twitter, Youtube } from "lucide-react";
+import { Github, Twitter, Youtube, SquareArrowOutUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 
 export default function Home() {
   const items = [
     {
-      title: "Aapelix's Weather App",
-      description: "My very own weather app/website powered by WeatherApi",
-      header: <img src="/Gradient2.png" />,
-      className: "md:col-span-2",
-      url: "https://weather.aapelix.dev",
-    },
-    {
       title: "Aapelix's News app",
       description: "WIP News app",
-      header: <img src="/Gradient.png" />,
-      className: "md:col-span-1",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
       url: "https://news.aapelix.dev",
+      className: "col-span-1",
+      published: "2024",
+    },
+    {
+      title: "Aapelix's Weather App",
+      description: "My very own weather app/website powered by WeatherApi",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
+      url: "https://weather.aapelix.dev",
+      className: "col-span-1",
+      published: "2024",
     },
     {
       title: "Project KTJNKEIO",
       description:
-        "A WIP game. The letters KTJNKEIO mean 'Keksikää Tälle joku nimi koska en ite osaa' that translates to 'Come Up With a Mame For This Because I Can't Myself'",
-      header: (
-        <>
-          <img className="md:block hidden" src="/Gradient3.png" alt="" />
-          <img className="md:hidden block" src="/Gradient.png" />
-        </>
-      ),
-      className: "md:row-span-2",
+        "A WIP game. The letters KTJNKEIO mean 'Keksikää Tälle joku nimi koska en ite osaa' that translates to 'Come Up With a Name For This Because I Can't Myself'",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
       url: "https://github.com/aapelix/project-ktjnkeio",
+      className: "row-span-1",
+      published: "Coming soonTM",
+    },
+    {
+      title: "Argonium",
+      description:
+        "NPM Package for usign many popular command line commands 39.948 (just a random number, no science) times easier and faster",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
+      url: "https://argonium.net/",
+      className: "row-span-1",
+      published: "2023",
     },
     {
       title: "Jamix menu v2",
       description: "My own version of JAMIX food app (WIP)",
-      header: <img src="/Gradient2.png" />,
-      className: "md:col-span-2",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
       url: "https://jamix.aapelix.dev",
+      className: "row-span-1",
+      published: "Coming soonTM",
     },
     {
       title: "Ilma",
       description: "A better version (🧢) of Wilma",
-      header: <img src="/Gradient.png" />,
-      className: "md:row-span-1",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
       url: "https://github.com/aapelix/project-ilma",
+      className: "row-span-1",
+      published: "Coming soonTM",
     },
     {
       title: "RealmiUtils",
       description:
         "Mineraft utility mod for a finnish minecraft server called Realmi",
-      header: <img src="/Gradient.png" />,
-      className: "md:row-span-1",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
       url: "https://modrinth.com/mod/realmiutils",
+      className: "row-span-1",
+      published: "2023",
+    },
+
+    {
+      title: "Cmd Weather App",
+      description:
+        "Like the name suggests, a cmd weather app. Who doesn't need one?",
+      header: <img className="rounded-lg" src="/Gradient.png" />,
+      url: "https://github.com/aapelix/weather",
+      className: "row-span-1",
+      published: "2024",
     },
   ];
 
   return (
     <>
-      <div className="bg-[url('/Gradientt.png')] w-screen h-screen fixed bg-cover" />
-
-      <div>
-        <motion.div initial={{ y: -100 }} animate={{ y: 0 }}>
-          <main className="w-screen flex justify-center min-h-screen bg-no-repeat text-background font-heading md:text-5xl antialiased tracking-[-0.015em] text-4xl font-bold">
-            <div className="flex flex-col w-2/3 justify-start items-center">
-              <section
-                id="hero"
-                className="flex flex-col items-center gap-6 flex-wrap justify-center h-[90vh] z-10"
+      <div className="flex h-screen flex-wrap items-center justify-center gap-x-44">
+        <h1 className="text-2xl text-zinc-400">
+          <motion.p
+            animate={{ y: 0, opacity: 100 }}
+            initial={{ y: 20, opacity: 0 }}
+            transition={{ delay: 1.4 }}
+          >
+            It's me,{" "}
+            <span className="text-zinc-300 font-semibold">Aapelix</span>.
+          </motion.p>
+          <motion.p
+            animate={{ y: 0, opacity: 100 }}
+            initial={{ y: 20, opacity: 0 }}
+            transition={{ delay: 1.6 }}
+          >
+            I'm a{" "}
+            <span className="text-zinc-300 font-semibold">programmer</span>{" "}
+            working on
+          </motion.p>
+          <motion.p
+            animate={{ y: 0, opacity: 100 }}
+            initial={{ y: 20, opacity: 0 }}
+            transition={{ delay: 1.8 }}
+          >
+            my own projects for fun
+          </motion.p>
+        </h1>
+        <motion.svg
+          width="617"
+          height="809"
+          viewBox="0 0 617 809"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="px-5"
+        >
+          <motion.path
+            d="M313.5 808L507.5 3.5M507.5 3.5L217.5 808M507.5 3.5L126.5 808M507.5 3.5L407 808M507.5 3.5L522.5 808M507.5 3.5L616 808M507.5 3.5L11 808"
+            stroke="white"
+            strokeWidth="2"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.path
+            d="M488.526 296.2C472.918 419.627 374.567 518 247 518C111.138 518 1 407.862 1 272C1 136.138 111.138 26 247 26C309.873 26 341.524 71.8443 369.345 124.767C373.634 132.925 377.834 141.254 382.042 149.602C391.445 168.253 400.892 186.992 411.482 204.105C426.827 228.901 444.664 250.45 468.469 263.618C480.815 270.447 490.25 282.566 488.526 296.2Z"
+            stroke="white"
+            strokeWidth="2"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.svg>
+      </div>
+      <div className="flex justify-center flex-col w-screen pb-4">
+        <p className="text-center text-zinc-400 mb-3">
+          Section working progress
+        </p>
+        <div className="grid grid-cols-3 gap-3 mx-10">
+          {items.map((item) => (
+            <div
+              className={
+                "bg-[#1a1a1a] text-zinc-300 h-[30rem] p-4 flex flex-col rounded-3xl items-start relative hover:scale-[1.03] hover:shadow-xl duration-300" +
+                " " +
+                item.className
+              }
+            >
+              {item.header}
+              <h1 className="mt-3 text-lg font-bold">{item.title}</h1>
+              <p className="text-zinc-400">{item.description}</p>
+              <p className="text-zinc-400 absolute left-4 bottom-5">
+                {item.published}
+              </p>
+              <a
+                href={item.url}
+                className="absolute bottom-5 right-5 hover:scale-105 duration-300"
               >
-                <h1 className="md:mr-10 mr-0 md:text-9xl text-8xl text-center translate-y-24 lg:translate-y-0 font-black">
-                  <p className="text-6xl md:-translate-y-0 -translate-y-6">
-                    Its me,
-                  </p>{" "}
-                  <br /> <p className="-translate-y-32">aapelix</p>
-                </h1>
-                <div className="text-lg gap-2 flex justify-center lg:-translate-y-24 flex-wrap">
-                  <a
-                    href="mailto:aapelix@duck.com"
-                    className="bg-[url('/button1.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
-                  >
-                    Contact me!
-                  </a>
-                  <a
-                    href="/#about"
-                    className="bg-[url('/button2.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
-                  >
-                    Who am i?
-                  </a>
-                  <a
-                    href="/#projects"
-                    className="bg-[url('/button3.jpg')] rounded-full flex justify-center items-center cursor-none h-12 font-normal w-44 hover:w-56 duration-300"
-                  >
-                    My projects.
-                  </a>
-                </div>
-              </section>
-              <section id="projects" className="z-50 text-base -translate-y-44">
-                <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-                  {items.map((item, i) => (
-                    <BentoGridItem
-                      key={i}
-                      title={item.title}
-                      description={item.description}
-                      header={item.header}
-                      className={item.className}
-                      url={item.url}
-                    />
-                  ))}
-                </BentoGrid>
-                <p className="text-center cursor-none mt-2 font-normal">
-                  More on my GitHub page
-                </p>
-              </section>
-              <section
-                id="about"
-                className="md:mt-12 mt-5 z-50 -translate-y-44"
-              >
-                <h1>Who am I?</h1>
-                <p className="text-lg font-light">
-                  Haha too lazy to write anything for now. Lorem ipsum dolor sit
-                  amet, consectetur adipisicing elit. Quia id cum laudantium
-                  perspiciatis veniam amet error enim est earum, consectetur
-                  veritatis animi incidunt quisquam sit unde tenetur totam
-                  doloribus dolor. Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit.
-                </p>
-              </section>
-              <section
-                id="socials"
-                className="flex w-full flex-col items-center z-50 -translate-y-32"
-              >
-                <div className="flex flex-wrap">
-                  <button
-                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-28 hover:w-44 duration-300"
-                    onClick={() => {
-                      location.assign("https://github.com/aapelix/");
-                    }}
-                  >
-                    GitHub
-                  </button>
-                  <button
-                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
-                    onClick={() => {
-                      location.assign("https://youtube.com/@aapelix");
-                    }}
-                  >
-                    Youtube
-                  </button>
-                  <button
-                    className="text-xl bg-secondary md:block hidden cursor-none p-2 px-4 rounded-full mx-1 w-[7.5rem] hover:w-44 duration-300"
-                    onClick={() => {
-                      location.assign("https://x.com/@aapelix1");
-                    }}
-                  >
-                    Twitter
-                  </button>
-
-                  <button
-                    className="text-xl bg-secondary md:hidden block cursor-none p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
-                    onClick={() => {
-                      location.assign("https://github.com/aapelix/");
-                    }}
-                  >
-                    <Github />
-                  </button>
-                  <button
-                    className="text-xl bg-secondary md:hidden block cursor-none p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
-                    onClick={() => {
-                      location.assign("https://youtube.com/@aapelix");
-                    }}
-                  >
-                    <Youtube />
-                  </button>
-                  <button
-                    className="text-xl bg-secondary md:hidden cursor-none block p-2 px-4 rounded-full mx-1 hover:scale-105 duration-300"
-                    onClick={() => {
-                      location.assign("https://x.com/@aapelix1");
-                    }}
-                  >
-                    <Twitter />
-                  </button>
-                </div>
-              </section>
+                <SquareArrowOutUpRight />
+              </a>
             </div>
-          </main>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </>
   );
