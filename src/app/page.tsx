@@ -79,7 +79,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center text-white flex-col gap-y-4">
-      <h1 className="text-6xl font-black">It's me, aapelix</h1>
+      <h1 className="text-6xl font-black">It&apos;s me, aapelix</h1>
       <div className="flex flex-wrap gap-3 md:flex-row flex-col justify-center items-center">
         <a href="https://github.com/aapelix">
           <button className="w-44 hover:w-96 duration-300 h-12 bg-white text-black rounded-full">
