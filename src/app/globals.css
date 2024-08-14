@@ -17,6 +17,12 @@
     }
 }
 
+body {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+        linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;
