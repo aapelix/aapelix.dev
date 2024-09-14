@@ -10,16 +10,32 @@ export default function Home() {
 
   const items = [
     {
+      title: "abrw",
+      description: "A fast and private browser made with rust and WebKit",
+      url: "https://abrw.aapelix.dev/#THISDOESNTACTUALLYEXISTYET",
+      git: "https://github.com/aapelix/abrw",
+    },
+    {
       title: "Aapelix's Weather App",
       description: "My very own weather app/website powered by WeatherApi",
       url: "https://weather.aapelix.dev",
       git: "https://github.com/aapelix/weather.aapelix.dev",
     },
     {
+      title: "aocs",
+      description: "Simple rust script to generate docs from .md files",
+      git: "https://github.com/aapelix/aocs",
+    },
+    {
       title: "jamix.aapelix.dev",
       description: "Remake of the jamixmenu.com food menu app",
       url: "https://jamix.aapelix.dev",
       git: "https://github.com/aapelix/jamixmenuv3",
+    },
+    {
+      title: "wikipedia-search",
+      description: "A test to try to create a search engine",
+      git: "https://github.com/aapelix/wikipedia-search",
     },
     {
       title: "Kvanttitietokone",
