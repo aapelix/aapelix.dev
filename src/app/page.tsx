@@ -8,87 +8,109 @@ export default function Home() {
   const [input, setInput] = useState("");
   const [limit, setLimit] = useState(3);
 
-  const items = [
-    {
-      title: "abrw",
-      description: "A fast and private browser made with rust and WebKit",
-      url: "https://abrw.aapelix.dev/#THISDOESNTACTUALLYEXISTYET",
-      git: "https://github.com/aapelix/abrw",
-    },
-    {
-      title: "Aapelix's Weather App",
-      description: "My very own weather app/website powered by WeatherApi",
-      url: "https://weather.aapelix.dev",
-      git: "https://github.com/aapelix/weather.aapelix.dev",
-    },
-    {
-      title: "aocs",
-      description: "Simple rust script to generate docs from .md files",
-      git: "https://github.com/aapelix/aocs",
-    },
-    {
-      title: "jamix.aapelix.dev",
-      description: "Remake of the jamixmenu.com food menu app",
-      url: "https://jamix.aapelix.dev",
-      git: "https://github.com/aapelix/jamixmenuv3",
-    },
-    {
-      title: "wikipedia-search",
-      description: "A test to try to create a search engine",
-      git: "https://github.com/aapelix/wikipedia-search",
-    },
-    {
-      title: "Kvanttitietokone",
-      description: "Work in progress chat bot powered by OpenAI",
-      git: "https://github.com/aapelix/chatti-botti",
-    },
-    {
-      title: "BlocksMined",
-      description: "A minecraft mod that tracks blocks mined on a server/world",
-      url: "https://modrinth.com/mod/blocksmined",
-      git: "https://github.com/aapelix/blocksmined",
-    },
-    {
-      title: "Project KTJNKEIO",
-      description:
-        "A WIP game. The letters KTJNKEIO mean 'Keksikää Tälle joku nimi koska en ite osaa' that translates to 'Come Up With a Name For This Because I Can't Myself'",
-      git: "https://github.com/aapelix/project-ktjnkeio",
-    },
-    {
-      title: "Argonium",
-      description:
-        "NPM Package for usign many popular command line commands 39.948 (just a random number, no science) times easier and faster",
-      url: "https://argonium.net/",
-    },
-    {
-      title: "Ilma",
-      description: "A better version (🧢) of Wilma",
-      git: "https://github.com/aapelix/project-ilma",
-    },
-    {
-      title: "RealmiUtils",
-      description:
-        "Mineraft utility mod for a finnish minecraft server called Realmi",
-      url: "https://modrinth.com/mod/realmiutils",
-      git: "https://github.com/aapelix/realmiutils",
-    },
-    {
-      title: "Cmd Weather App",
-      description:
-        "Like the name suggests, a cmd weather app. Who doesn't need one?",
-      git: "https://github.com/aapelix/weather",
-    },
-    {
-      title: "Aapelix's News app",
-      description: "WIP News app",
-      url: "https://news.aapelix.dev",
-      git: "https://github.com/aapelix/news.aapelix.dev",
-    },
-  ];
+  // const items = [
+  //   {
+  //     title: "abrw",
+  //     description: "A fast and private browser made with rust and WebKit",
+  //     url: "https://abrw.aapelix.dev/#THISDOESNTACTUALLYEXISTYET",
+  //     git: "https://github.com/aapelix/abrw",
+  //   },
+  //   {
+  //     title: "Aapelix's Weather App",
+  //     description: "My very own weather app/website powered by WeatherApi",
+  //     url: "https://weather.aapelix.dev",
+  //     git: "https://github.com/aapelix/weather.aapelix.dev",
+  //   },
+  //   {
+  //     title: "aocs",
+  //     description: "Simple rust script to generate docs from .md files",
+  //     git: "https://github.com/aapelix/aocs",
+  //   },
+  //   {
+  //     title: "jamix.aapelix.dev",
+  //     description: "Remake of the jamixmenu.com food menu app",
+  //     url: "https://jamix.aapelix.dev",
+  //     git: "https://github.com/aapelix/jamixmenuv3",
+  //   },
+  //   {
+  //     title: "wikipedia-search",
+  //     description: "A test to try to create a search engine",
+  //     git: "https://github.com/aapelix/wikipedia-search",
+  //   },
+  //   {
+  //     title: "Kvanttitietokone",
+  //     description: "Work in progress chat bot powered by OpenAI",
+  //     git: "https://github.com/aapelix/chatti-botti",
+  //   },
+  //   {
+  //     title: "BlocksMined",
+  //     description: "A minecraft mod that tracks blocks mined on a server/world",
+  //     url: "https://modrinth.com/mod/blocksmined",
+  //     git: "https://github.com/aapelix/blocksmined",
+  //   },
+  //   {
+  //     title: "Project KTJNKEIO",
+  //     description:
+  //       "A WIP game. The letters KTJNKEIO mean 'Keksikää Tälle joku nimi koska en ite osaa' that translates to 'Come Up With a Name For This Because I Can't Myself'",
+  //     git: "https://github.com/aapelix/project-ktjnkeio",
+  //   },
+  //   {
+  //     title: "Argonium",
+  //     description:
+  //       "NPM Package for usign many popular command line commands 39.948 (just a random number, no science) times easier and faster",
+  //     url: "https://argonium.net/",
+  //   },
+  //   {
+  //     title: "Ilma",
+  //     description: "A better version (🧢) of Wilma",
+  //     git: "https://github.com/aapelix/project-ilma",
+  //   },
+  //   {
+  //     title: "RealmiUtils",
+  //     description:
+  //       "Mineraft utility mod for a finnish minecraft server called Realmi",
+  //     url: "https://modrinth.com/mod/realmiutils",
+  //     git: "https://github.com/aapelix/realmiutils",
+  //   },
+  //   {
+  //     title: "Cmd Weather App",
+  //     description:
+  //       "Like the name suggests, a cmd weather app. Who doesn't need one?",
+  //     git: "https://github.com/aapelix/weather",
+  //   },
+  //   {
+  //     title: "Aapelix's News app",
+  //     description: "WIP News app",
+  //     url: "https://news.aapelix.dev",
+  //     git: "https://github.com/aapelix/news.aapelix.dev",
+  //   },
+  // ];
 
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().startsWith(input.toLowerCase()),
-  );
+  const [repos, setRepos] = useState<any[]>([]);
+  const [fRepos, setFRepos] = useState<any[]>([]);
+
+  async function getRepos() {
+    const res = await fetch("https://api.github.com/users/aapelix/repos");
+    const data = await res.json();
+
+    setRepos(data);
+  }
+
+  useEffect(() => {
+    getRepos();
+  }, []);
+
+  useEffect(() => {
+    const filtered = repos.filter((item) =>
+      item.name.toLowerCase().startsWith(input.toLowerCase()),
+    );
+
+    setFRepos(filtered);
+  }, [input, repos]);
+
+  // const filteredItems = items.filter((item) =>
+  //   item.title.toLowerCase().startsWith(input.toLowerCase()),
+  // );
 
   return (
     <div className="w-full flex min-h-screen justify-center items-center text-white flex-col gap-y-4">
@@ -128,32 +150,30 @@ export default function Home() {
             onChange={(e) => setInput(e.target.value)}
           />
           <ul className="bg-white text-black rounded-3xl px-5 py-2 mt-2">
-            {filteredItems.slice(0, limit).map((project, index) => (
+            {fRepos.slice(0, limit).map((project, index) => (
               <li
                 className="my-0.5 flex justify-between items-center"
                 key={index}
               >
                 <div>
-                  <h1 className="font-bold">{project.title}</h1>
+                  <div className="flex flex-row gap-x-2">
+                    <h1 className="font-bold">{project.name}</h1>
+                    <p>{project.archived ? "(archived)" : ""}</p>
+                    <p>{project.fork ? "(fork)" : ""}</p>
+                  </div>
+                  {!project.description && (
+                    <p className="-translate-y-1">{project.full_name}</p>
+                  )}
                   <p className="-translate-y-1">{project.description}</p>
                 </div>
-                <div className="flex">
-                  {project.git && (
-                    <a
-                      href={project.git}
-                      className="hover:scale-110 duration-300"
-                    >
-                      <Github />
-                    </a>
-                  )}
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      className="hover:scale-110 duration-300"
-                    >
-                      <SquareArrowOutUpRight />
-                    </a>
-                  )}
+                <div className="flex gap-x-2">
+                  <p>{project.language ? project.language : "N/A"}</p>
+                  <a
+                    href={project.html_url}
+                    className="hover:scale-110 duration-300"
+                  >
+                    <Github />
+                  </a>
                 </div>
               </li>
             ))}
