@@ -1,8 +1,9 @@
 "use client"
 
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Github, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 
 const techIcons = [
   "/rust.png", "/csharp.png", "/astro.png", "/go.png", "/java.png", "/svelte.png", "/cpp.png", "/python.png", "/js.png", "/vue.png", "/c.png", "/react.png", "/ts.png",
@@ -96,7 +97,7 @@ export default function Home() {
         const res = await fetch("https://api.github.com/users/aapelix/repos");
         const data = await res.json();
         setRepos(
-          data.map((repo: { name: any; html_url: any; description: any; language: any; stargazers_count: any; fork: any; }) => ({
+          data.map((repo: { name: string; html_url: string; description: string; language: string; stargazers_count: number; fork: boolean; }) => ({
             name: repo.name,
             url: repo.html_url,
             description: repo.description,
@@ -174,7 +175,7 @@ export default function Home() {
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
             {techIcons.concat(techIcons).map((icon, index) => (
-              <img
+              <Image
                 key={index}
                 src={icon}
                 alt="Tech Icon"
@@ -208,7 +209,7 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
             >
               <div className="flex items-center mb-4 gap-4">
-                <img src={project.icon} alt={project.title} className="w-12 h-12 rounded-xl object-contain" />
+                <Image src={project.icon} alt={project.title} className="w-12 h-12 rounded-xl object-contain" />
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
               </div>
               <p className="text-gray-400 mb-4">{project.description}</p>
