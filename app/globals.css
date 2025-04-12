@@ -3,19 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+    --background: #ffffff;
+    --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #000000;
+        --foreground: #ededed;
+    }
+}
+
+@font-face {
+    font-family: "aPixel";
+    src: url("./fonts/apixel.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: "aPixel", sans-serif;
 }
