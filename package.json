@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aapelix/pixels": "^1.0.3",
     "lucide-react": "^0.473.0",
     "motion": "^11.11.17",
     "next": "15.0.3",
