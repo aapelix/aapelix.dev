@@ -61,7 +61,7 @@ export default function Home() {
         </Link>
         <Link
           className="hover:text-black duration-300 flex items-center gap-2"
-          href="https://modrinth.com/mod/blocksmined"
+          href="https://github.com/aapelix/gracias"
         >
           <Archive12 className="w-10 h-10 -translate-y-1.5" />
           Lucide Pixel
