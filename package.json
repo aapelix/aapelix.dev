@@ -16,7 +16,9 @@
     "vite-plugin-solid": "^2.11.6"
   },
   "dependencies": {
+    "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.7",
+    "ascify-solid": "^0.0.0",
     "daisyui": "^5.0.35",
     "lucide-solid": "^0.511.0",
     "solid-js": "^1.9.5",

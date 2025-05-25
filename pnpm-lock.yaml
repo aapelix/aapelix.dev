@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@solidjs/router':
+        specifier: ^0.15.3
+        version: 0.15.3(solid-js@1.9.5)
       '@tailwindcss/vite':
         specifier: ^4.1.7
         version: 4.1.7(vite@6.0.0(jiti@2.4.2)(lightningcss@1.30.1))
+      ascify-solid:
+        specifier: ^0.0.0
+        version: 0.0.0(solid-js@1.9.5)
       daisyui:
         specifier: ^5.0.35
         version: 5.0.35
@@ -373,6 +379,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@solidjs/router@0.15.3':
+    resolution: {integrity: sha512-iEbW8UKok2Oio7o6Y4VTzLj+KFCmQPGEpm1fS3xixwFBdclFVBvaQVeibl1jys4cujfAK5Kn6+uG2uBm3lxOMw==}
+    peerDependencies:
+      solid-js: ^1.8.6
+
   '@tailwindcss/node@4.1.7':
     resolution: {integrity: sha512-9rsOpdY9idRI2NH6CL4wORFY0+Q6fnx9XP9Ju+iq/0wJwGD5IByIgFmwVbyy4ymuyprj8Qh4ErxMKTUL4uNh3g==}
 
@@ -477,6 +488,12 @@ packages:
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
+
+  ascify-solid@0.0.0:
+    resolution: {integrity: sha512-4Wf5e7hIYYIksht/iUOBYrphvCgzoLrS6qlMREbcFnOyzIEyAWxJsX++lo1Af73e+kPBwAxGaRdIOmXmZLib9w==}
+    engines: {node: '>=18', pnpm: '>=9.0.0'}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   babel-plugin-jsx-dom-expressions@0.39.3:
     resolution: {integrity: sha512-6RzmSu21zYPlV2gNwzjGG9FgODtt9hIWnx7L//OIioIEuRcnpDZoY8Tr+I81Cy1SrH4qoDyKpwHHo6uAMAeyPA==}
@@ -1079,6 +1096,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.27.4':
     optional: true
 
+  '@solidjs/router@0.15.3(solid-js@1.9.5)':
+    dependencies:
+      solid-js: 1.9.5
+
   '@tailwindcss/node@4.1.7':
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -1172,6 +1193,10 @@ snapshots:
       '@babel/types': 7.26.0
 
   '@types/estree@1.0.6': {}
+
+  ascify-solid@0.0.0(solid-js@1.9.5):
+    dependencies:
+      solid-js: 1.9.5
 
   babel-plugin-jsx-dom-expressions@0.39.3(@babel/core@7.26.0):
     dependencies:
