@@ -59,7 +59,7 @@ const App: Component = () => {
 
   return (
     <>
-      <div class="navbar justify-between pr-5 bg-base-200 border border-base-300 z-50 fixed md:w-[60vw] w-full md:left-1/2 md:-translate-x-1/2 mt-2 rounded-3xl">
+      <div class="navbar justify-between pr-5 bg-base-200 md:border md:border-base-300 z-50 fixed md:w-[60vw] w-screen md:left-1/2 md:-translate-x-1/2 mt-2 rounded-3xl">
         <a class="btn btn-ghost">aapelix.dev</a>
         <div class="flex gap-4">
           <a
@@ -73,7 +73,7 @@ const App: Component = () => {
           </a>
         </div>
       </div>
-      <div class="bg-base-200 h-full min-h-screen flex flex-col items-center pt-80 justify-center pb-10">
+      <div class="bg-base-200 h-full overflow-x-hidden min-h-screen flex flex-col items-center pt-80 justify-center pb-10">
         <div class="max-w-[800px] w-full">
           <div class="flex md:flex-row flex-col gap-y-10 justify-between items-center">
             <div>
@@ -156,9 +156,14 @@ const App: Component = () => {
             </div>
           </div>
         </div>
+
         <footer class="mt-32 flex w-screen justify-center">
-          <div class="max-w-[60vw] w-full flex justify-center items-center gap-2">
-            <Asciifier transparentBg src={aapelixD} />
+          <div class="max-w-[60vw] w-screen flex justify-center items-center gap-2">
+            <Asciifier
+              transparentBg
+              src={aapelixD}
+              width={Math.min(window.innerWidth / 10, 100)}
+            />
           </div>
         </footer>
       </div>

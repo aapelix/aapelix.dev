@@ -1,5 +1,5 @@
 import { Asciifier } from "ascify-solid";
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { createSignal, onCleanup } from "solid-js";
 
 const fileToBase64 = (file: File): Promise<string> =>
   new Promise((resolve, reject) => {
@@ -8,20 +8,6 @@ const fileToBase64 = (file: File): Promise<string> =>
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
-
-function toDataUrl(url: string, callback: Function) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    var reader = new FileReader();
-    reader.onloadend = function () {
-      callback(reader.result);
-    };
-    reader.readAsDataURL(xhr.response);
-  };
-  xhr.open("GET", url);
-  xhr.responseType = "blob";
-  xhr.send();
-}
 
 export default function View() {
   let fileIRef!: HTMLInputElement;
