@@ -1,9 +1,16 @@
-import { createMemo, createSignal, onCleanup, type Component } from "solid-js";
+import {
+  createMemo,
+  createSignal,
+  onCleanup,
+  onMount,
+  type Component,
+} from "solid-js";
 
 import aapelix from "./assets/aapelix.png";
 import aapelixD from "./assets/aapelix.dev.png";
 import eye from "./assets/eye.png";
 import { Asciifier } from "ascify-solid";
+import { addAnalytics } from "./analytics";
 
 function Eye({
   offsetX,
@@ -56,6 +63,8 @@ function Eye({
 
 const App: Component = () => {
   const [imgRef, setImgRef] = createSignal<HTMLImageElement>();
+
+  onMount(() => addAnalytics("aapelix.dev"));
 
   return (
     <>
