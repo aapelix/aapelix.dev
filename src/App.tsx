@@ -71,6 +71,7 @@ const App: Component = () => {
           <a
             href="https://github.com/aapelix?tab=repositories"
             class="link link-hover"
+            data-umami-event="github-projects-link"
           >
             Projects
           </a>
@@ -89,6 +90,7 @@ const App: Component = () => {
                   href="https://github.com/aapelix"
                   target="_blank"
                   class="btn bg-base-100"
+                  data-umami-event="github-link"
                 >
                   Github
                 </a>
@@ -96,6 +98,7 @@ const App: Component = () => {
                   href="https://youtube.com/@aapelix"
                   target="_blank"
                   class="btn bg-base-100"
+                  data-umami-event="youtube-link"
                 >
                   YouTube
                 </a>
@@ -121,7 +124,11 @@ const App: Component = () => {
                 </div>
                 <p>fast & private web browser made with Rust</p>
                 <div class="card-actions justify-end">
-                  <a href="https://github.com/aapelix/abrw-min" class="btn">
+                  <a
+                    href="https://github.com/aapelix/abrw-min"
+                    class="btn"
+                    data-umami-event="github-abrw-link"
+                  >
                     Github
                   </a>
                 </div>
@@ -138,7 +145,11 @@ const App: Component = () => {
                   everything else you need.
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="https://github.com/aapelix/bootstrap" class="btn">
+                  <a
+                    href="https://github.com/aapelix/bootstrap"
+                    class="btn"
+                    data-umami-event="github-bootstrap-link"
+                  >
                     Github
                   </a>
                 </div>
@@ -154,7 +165,11 @@ const App: Component = () => {
                   versions, mod loaders
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="https://github.com/aapelix/downloader" class="btn">
+                  <a
+                    href="https://github.com/aapelix/downloader"
+                    class="btn"
+                    data-umami-event="github-downloader-link"
+                  >
                     Github
                   </a>
                 </div>
